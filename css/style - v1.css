@@ -1,0 +1,126 @@
+/*Your Code Here*/
+
+/*Write selector/rule property to add your border when
+links in the navigation are in the hover or focus state.*/
+nav a:hover, nav a:focus {
+     border: 2px dotted purple; /* size, style, color */
+}
+
+/*Write selector/rule property to position the default position for the skip class element*/
+.skip {
+     position: absolute; /* is relative to other elements */
+     top: -65px;
+     display: none;
+     /* tabindex="0" */
+     /* when focused, it is positioned 25px below top of parent */
+}
+
+/*Write selector/rule property to position the skip class element when it is in focus*/
+.skip:focus {
+     /* when focused, it is positioned 25px below top of parent */
+     position: absolute;
+     top: 25px;
+     background-color: red;
+
+}
+/*Write selector/rule property to style all elements when in focus*/
+*:focus {
+     border: 5px dashed green; /* size, style, color */
+}
+
+/*Write selector/rule property to style the container */
+.container {
+     /* turn into grid */
+     display: grid;
+     /* 5 columns of equal size */
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     /* gap of 13px b/t rows and columns */
+     gap: 13px;
+     /* stretch to viewport */
+     /* width: 100vh; */
+     /* Hint: use inspect element to align styling w/ ours */
+     /*
+     justify-items: center;
+     align-items: center;
+     */
+}
+
+/*Write selector/rule property to add the background image to the first div in the grid and place it in the grid. */
+/* Source: MDN https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child */
+.container div:first-child {
+     /* take up all columns */
+     /*grid-column: 1 / 5;*/
+     grid-column: 1 / -1;
+     /* add non repeating bg */
+     background-image: url(../images/header.jpg);
+     background-repeat: no-repeat;
+     /*
+     justify-content: center;
+     align-content: center;
+     */
+
+}
+
+/* Steps 6 and 7: Write the selector/rule properties to  place the next five elements in the next
+ five rows in the grid. */
+ /*This will be a lot of rules.... but be strategic and combine selectors*/
+ /* elements: .accounts, .onlinebanking, .security, .loans, .contact */
+
+.accounts, .onlinebanking, .security, .loans, .contact{
+     /* Begin in 2nd column & span 3 columns */
+     grid-column: 2 / span 3;
+     width: 100%;
+}
+
+.accounts, .accounts-image {
+     /* start on 2nd row */
+     grid-row: 2;
+}
+
+.onlinebanking, .onlinebanking-image {
+     /* start on 3rd row */
+     grid-row: 3;
+
+}
+
+.security, .security-image {
+     /* start on 4th row */
+     grid-row: 4;
+}
+
+.loans, .loans-image{
+     /* start on 5th row */
+     grid-row: 5;
+}
+
+.contact {
+     /* start on 6th row */
+     grid-row: 6;
+}
+
+/* all image divs */
+.accounts-image, .online-banking-image, .security-image, .loans-image, .contact-image {
+     /* cover all columns */
+     grid-column: span -1;
+     width: 100%;
+     max-height: 675px;
+}
+
+ /* Step 8: Write the selector/rule property to style the .text-block class. */
+
+
+/* Add your media query here */
+
+
+  /* Step 10: Write the selector/rule property to style the nav element */
+
+
+  /* Step 11: Write the selector/rule property to update the .container class */
+
+
+  /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
+
+
+
+ /* Step 16:Write the selector/rule property to update the .text-block class */
+

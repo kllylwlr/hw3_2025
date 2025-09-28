@@ -1,0 +1,166 @@
+/*Your Code Here*/
+
+/*Write selector/rule property to add your border when
+links in the navigation are in the hover or focus state.*/
+nav a:hover, nav a:focus {
+     border: 2px dotted purple;
+}
+
+/*Write selector/rule property to position the default position for the skip class element*/
+.skip {
+     position: absolute;
+     top: -65px;
+}
+
+/*Write selector/rule property to position the skip class element when it is in focus*/
+.skip:focus {
+     position: absolute;
+     top: 25px;
+}
+
+/*Write selector/rule property to style all elements when in focus*/
+*:focus {
+     border: 5px dashed green;
+}
+
+/*Write selector/rule property to style the container */
+.container {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     gap: 13px;
+     width: 100%;
+     justify-self: stretch;
+     /* Align styling of items */
+     align-items: stretch; /* align vertically */
+     justify-items: stretch; /* align horizontally */
+     /* Test - making min width & height */
+}
+
+/* Setting a min width & height for all items in container to prevent overflow */
+/* Source: https://stackoverflow.com/questions/43311943/prevent-content-from-expanding-grid-items */
+.container > * {
+     min-width: 0;
+     min-height: 0;
+     overflow: hidden;
+}
+
+/*Write selector/rule property to add the background image to the first div in the grid and place it in the grid. */
+/* Source: MDN https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child */
+.container div:first-child {
+     /* take up all the columns */
+     grid-column: 1 / -1; /* same as grid-column: 1 / span 5; */
+     background-image: url(../images/header.jpg);
+     background-repeat: no-repeat;
+}
+
+/* Steps 6 and 7: Write the selector/rule properties to  place the next five elements in the next
+ five rows in the grid. */
+
+      /*This will be a lot of rules.... but be strategic and combine selectors*/
+.accounts, .onlinebanking, .security, .loans, .contact {
+     /* begin in 2nd col & span 3 columns */
+     grid-column: 2 / span 3;
+}
+
+.accounts, .accounts-image {
+     /* begin on 2nd row */
+     grid-row: 2;
+}
+
+.onlinebanking, .onlinebanking-image {
+     /* begin on 3rd row */
+     grid-row: 3;
+}
+
+.security, .security-image {
+     /* begin on 4th row */
+     grid-row: 4;
+}
+
+.loans, .loans-image {
+     /* begin on 5th row */
+     grid-row: 5;
+}
+
+.contact, .contact-image {
+     /* begin on 6th row */
+     grid-row: 6;
+}
+
+/* Image divs, span all columns */
+.accounts-image, .onlinebanking-image, .security-image, .loans-image, .contact-image {
+     /* Cover all columns */
+     grid-column: 1 / -1;
+     /* Max height */
+     max-height: 675px;
+}
+
+/* Style images to fit in container */
+img {
+     width: 100%;
+     height: 100%;
+}
+
+ /* Step 8: Write the selector/rule property to style the .text-block class. */
+.text-block {
+     /* centered horizontally & vertically*/
+     justify-self: center; /* horizontal */
+     align-self: center; /* vertical */
+     /* centered text */
+     text-align: center;
+
+}
+
+/* List items - align left */
+.text-block li {
+     text-align: left;
+}
+
+/* Add your media query here */
+@media screen and (min-width: 825px) {
+
+  /* Step 10: Write the selector/rule property to style the nav element */
+  nav {
+     text-align: right;
+     padding: 35px 0px 35px 0px; /* top, right, bottom, left */
+  }
+
+  /* Step 11: Write the selector/rule property to update the .container class */
+  .container {
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
+  /* Style accounts, security & contact divs*/
+  .accounts, .security, .contact {
+     /* begin in 4th col & span 3 columns */
+     grid-column: 4 / span 3;
+  }
+
+  /* Style online banking & loans divs */
+  .onlinebanking, .loans {
+     /* begin in 2nd col & span 3 cols */
+     grid-column: 2 / span 3;
+  }
+
+  /* Style accounts img, security img & contact img divs */
+  .accounts-image, .security-image, .contact-image {
+     /* begin in 1st col & span 5 cols */
+     grid-column: 1 / span 5;
+  }
+
+  /* Style online banking img & loans img */
+  .onlinebanking-image, .loans-image {
+     /* begin in 3rd col & span 5 cols */
+     grid-column: 3 / span 5;
+  }
+
+
+ /* Step 16:Write the selector/rule property to update the .text-block class */
+  .text-block {
+     /* max height of 235px */
+     max-height: 235px;
+
+  }
+
+}
